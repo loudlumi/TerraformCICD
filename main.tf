@@ -16,7 +16,7 @@ resource "azurerm_log_analytics_workspace" "law_lumi" {
 
 
 resource "azurerm_sentinel_log_analytics_workspace_onboarding" "sentinel_law_lumi" {
-  resource_group_name          = azurerm_resource_group.example.name
+  resource_group_name          = "RG-TERRAFORMCICD-T"
   workspace_name               = azurerm_log_analytics_workspace.law_lumi.name
   customer_managed_key_enabled = false
 }
