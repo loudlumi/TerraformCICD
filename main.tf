@@ -14,7 +14,14 @@ resource "azurerm_log_analytics_workspace" "law_lumi" {
   retention_in_days   = 30
 }
 
-resource "azurerm_sentinel_workspace" "sentinel_lumi" {
-  name                = "Sentinel-Lumi"
-  log_analytics_workspace_id = azurerm_log_analytics_workspace.law_lumi.id
+
+resource "azurerm_sentinel_log_analytics_workspace_onboarding" "sentinel_law_lumi" {
+  resource_group_name          = azurerm_resource_group.example.name
+  workspace_name               = azurerm_log_analytics_workspace.law_lumi.name
+  customer_managed_key_enabled = false
 }
+
+# resource "azurerm_sentinel_workspace" "sentinel_lumi" {
+#   name                = "Sentinel-Lumi"
+#   log_analytics_workspace_id = azurerm_log_analytics_workspace.law_lumi.id
+# }
