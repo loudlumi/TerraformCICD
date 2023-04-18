@@ -6,6 +6,18 @@ provider "azurerm" {
   tenant_id       = var.tenant_id
 }
 
+terraform {
+      backend "remote" {
+        # The name of your Terraform Cloud organization.
+        organization = "example-organization"
+
+        # The name of the Terraform Cloud workspace to store Terraform state files in.
+        workspaces {
+          name = "TerraformCICD"
+        }
+      }
+    }
+
 resource "azurerm_log_analytics_workspace" "law_lumi" {
   name                = "LAW-Lumi"
   location            = "Canada Central"
