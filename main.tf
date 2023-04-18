@@ -6,6 +6,7 @@ provider "azurerm" {
   tenant_id       = var.tenant_id
 }
 
+
 terraform {
       backend "remote" {
         # The name of your Terraform Cloud organization.
