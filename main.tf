@@ -8,8 +8,8 @@ provider "azurerm" {
 
 resource "azurerm_log_analytics_workspace" "law_lumi" {
   name                = "LAW-Lumi"
-  location            = "East US"
-  resource_group_name = "<RESOURCE_GROUP_NAME>"
+  location            = "Canada Central"
+  resource_group_name = "RG-TERRAFORMCICD-T"
   sku                 = "PerGB2018"
   retention_in_days   = 30
 }
