@@ -1,9 +1,9 @@
 provider "azurerm" {
   features {}
-  subscription_id = "<SUBSCRIPTION_ID>"
-  client_id       = "<APP_ID>"
-  client_secret   = "<APP_SECRET>"
-  tenant_id       = "<TENANT_ID>"
+  subscription_id = var.subscription_id
+  client_id       = var.client_id
+  client_secret   = var.client_secret
+  tenant_id       = var.tenant_id
 }
 
 resource "azurerm_log_analytics_workspace" "law_lumi" {
