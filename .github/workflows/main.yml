@@ -29,10 +29,12 @@ jobs:
     - name: Terraform Validate
       run: terraform validate
 
-    - name: Terraform Plan
-      run: terraform plan -no-color -input=false -out=$GITHUB_OUTPUT
-      continue-on-error: true
+#     - name: Terraform Plan
+#       run: terraform plan -no-color -input=false -out=$GITHUB_OUTPUT
+#       continue-on-error: true
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      run: terraform apply -no-color -input=false -auto-approve $GITHUB_OUTPUT
+      run: |
+        cd /
+        terraform apply -no-color -input=false -auto-approve main.tf
