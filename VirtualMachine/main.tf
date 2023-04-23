@@ -10,9 +10,28 @@ variable "vm_size" {
   default = "Standard_B2s"
 }
 
+
 provider "azurerm" {
   features {}
+  subscription_id = var.subscription_id
+  client_id       = var.client_id
+  client_secret   = var.client_secret
+  tenant_id       = var.tenant_id
 }
+
+
+terraform {
+      backend "remote" {
+        # The name of your Terraform Cloud organization.
+        organization = "Lumitek"
+
+        # The name of the Terraform Cloud workspace to store Terraform state files in.
+        workspaces {
+          name = "TerraformCICD"
+        }
+      }
+    }
+
 
 resource "azurerm_resource_group" "vm-rg" {
   name     = "RG-TerraformVM-T"
