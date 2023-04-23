@@ -34,6 +34,7 @@ resource "azurerm_sentinel_log_analytics_workspace_onboarding" "sentinel_law_lum
   customer_managed_key_enabled = false
 }
 
+
 # resource "azurerm_sentinel_workspace" "sentinel_lumi" {
 #   name                = "Sentinel-Lumi"
 #   log_analytics_workspace_id = azurerm_log_analytics_workspace.law_lumi.id
