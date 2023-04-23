@@ -60,7 +60,7 @@ resource "azurerm_virtual_network" "vm-vnet" {
 resource "azurerm_subnet" "vm-subnet" {
   name                 = "internalvmSubnet"
   resource_group_name  = azurerm_resource_group.vm-rg.name
-  virtual_network_name = azurerm_virtual_network.vm-subnet.name
+  virtual_network_name = azurerm_virtual_network.vm-vnet.name
   address_prefixes     = ["10.0.2.0/24"]
 }
 
