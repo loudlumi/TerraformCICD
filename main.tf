@@ -104,10 +104,10 @@ resource "azurerm_linux_virtual_machine" "vm-linux" {
   }
 }
 
-output "public_key" {
-  value = azurerm_linux_virtual_machine.admin_ssh_key.public_key
-  sensitive = true
-}
+# output "public_key" {
+#   value = azurerm_linux_virtual_machine.admin_ssh_key.public_key
+#   sensitive = true
+# }
 
 
 
